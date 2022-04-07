@@ -22,7 +22,7 @@ function List() {
                         6  Cột
                     </Button>
                 </div>
-                <Row xs="1" md={col} lg={col}>
+                <Row xs="1" md="2" lg={col}>
                     {STAFFS.map(STAFF => (
                         <Col className="bg-light border list-text" key={STAFF.id} onClick={() => setStaffId(STAFF.id)}>
                             {STAFF.name}
