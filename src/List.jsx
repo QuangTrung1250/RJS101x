@@ -11,7 +11,7 @@ function List() {
     return (
         <Fragment>
             <Container id='list'>
-                <div className='container button-group'>
+                <div className='button-group'>
                     <Button color="primary" outline onClick={() => setCol(2)}>
                         2  Cột
                     </Button>
