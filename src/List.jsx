@@ -1,21 +1,38 @@
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import './App.css'
 import { STAFFS } from './staffs'
-function ListConstruc(STAFF) {
-    return (
-        <Col className="bg-light border list-text" key={STAFF.id}>
-            {STAFF.name}
-        </Col>
-    )
-}
+import InfoStaff from './InfoStaff'
+import React, { useState } from 'react';
+
 function List() {
-    console.log(STAFFS.length)
+    const [staffId, setStaffId] = useState(null);
+    const [col, setCol ] = useState(3);
+
+  
     return (
         <Container id='list'>
-            <Row xs="1" md='2' lg='3'>
-                {STAFFS.map(ListConstruc)}
+            <div className='container'>
+  <Button color="primary" outline onClick={() => setCol(2)}>
+    2  Cột
+  </Button>
+  <Button color="primary" outline onClick={() => setCol(3)}>
+    3 Cột
+  </Button>
+  <Button color="primary" outline onClick={() => setCol(6)}>
+    6  Cột
+  </Button>
+</div>
+<div ></div>
+            <Row xs={col} md={col} lg= {col}>
+                {STAFFS.map(STAFF => (
+                    <Col className="bg-light border list-text" key={STAFF.id} onClick={() => setStaffId(STAFF.id)}>
+                        {STAFF.name}
+                    </Col>
+                ))}
             </Row>
+            <InfoStaff staffId={staffId} />
         </Container>
+
     )
 }
 
