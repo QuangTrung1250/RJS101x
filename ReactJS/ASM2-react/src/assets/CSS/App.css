@@ -10,6 +10,11 @@
   height: 40px;
   padding-left: 20px;
 }
+
+.nav-logo:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
 .icon {
   font-size: 20px;
 
@@ -29,6 +34,7 @@
 
 .nav-menu:hover {
   color: #0dcaf0;
+  opacity: 0.8;
 }
 
 .list {
@@ -44,6 +50,7 @@
 .list-text:hover {
   color: #0dcaf0;
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .list-text-content {
