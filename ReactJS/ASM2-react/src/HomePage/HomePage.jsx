@@ -2,46 +2,32 @@ import {Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
 import { Routes, Route, Link  } from 'react-router-dom';
 import List from './List'
 import { Fragment } from 'react/cjs/react.development';
-// // import { Department } from '../Department/Department'
-// import { Payroll } from '../Payroll/Payroll'
+import Department from '../Department/Department'
+import Payroll from '../Payroll/Payroll'
+import InfoStaff from './InfoStaff'
+import Footer from './Footer';
 
 function HomePage() {
    return (
      <Fragment>
-  <Navbar
-    color="primary"
-    dark
-    expand
-    fixed="top"
-    light
-  >
-    <NavbarBrand href="/" className='text-center nav-header'>
-      Ứng dụng quản lý nhân sự v1.0.0
-    </NavbarBrand>
-    <Nav className="ml-auto" navbar>
-              <NavItem>
+  <Nav pills className='nav-menu-fix'>
+    <NavItem>
+      <NavLink href="/">
+         <img src='src/assets/images/logo.png' alt='logo' className='nav-logo' />
+      </NavLink>
+    </NavItem>
+    <Link to="/" className="nav-menu">Nhân viên</Link>
+      <Link to="/Department" className="nav-menu">Phòng ban</Link>
+      <Link to="/Payroll" className="nav-menu">Bảng lương</Link>
+    </Nav>
 
-                <Link to="/">Nhaanvien</Link>
-
-              </NavItem>
-              <NavItem>
-
-              <Link to="/Department">Department</Link>
-
-              </NavItem>
-              <NavItem>
-
-              <Link to="/Payroll">Payroll</Link>
-
-              </NavItem>
-              </Nav>
-    </Navbar>
     <Routes>
       <Route path="/" element={<List />} />
-      {/* <Route path="/Department" element={<Department />} /> */}
-      {/* <Route path="/Payroll" element={<Payroll />} /> */}
+      <Route path="/Department" element={<Department />} /> 
+      <Route path="/Payroll" element={<Payroll />} /> 
+      <Route path="/InfoStaff/" element={<InfoStaff staffId= {0}/>} />
     </Routes>
-
+<Footer />
     </Fragment>
   )
 }

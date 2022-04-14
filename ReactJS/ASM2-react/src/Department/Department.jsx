@@ -1,35 +1,32 @@
-import { Container, Row, Col, Button } from 'reactstrap';
-import { STAFFS } from '../Data/staffs'
-import InfoStaff from './InfoStaff'
-import React, { useState } from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import { DEPARTMENTS } from '../staffs'
 import { Fragment } from 'react/cjs/react.development';
 
 function Department() {
-    const [staffId, setStaffId] = useState(null);
-    const [col, setCol] = useState(3);
+    function Depart() {
+        return (
+            DEPARTMENTS.map((DEPARTMENT) => {
+                return (
+                    <Col className=" list-text" key={DEPARTMENT.id} >
+                        <div className=' bg-light border list-text-content'>
+                            <h2><i>{DEPARTMENT.name}</i></h2>
+                            <p>Số lượng nhân viên: {DEPARTMENT.numberOfStaff}</p>
+                        </div>
+                    </Col>
+                )
+            })
+        )
+    }
     return (
         <Fragment>
-            <Container id='list'>
-                <div className='button-group'>
-                    <Button color="primary" outline onClick={() => setCol(2)}>
-                        2  Cột
-                    </Button>
-                    <Button color="primary" outline onClick={() => setCol(3)}>
-                        3 Cột
-                    </Button>
-                    <Button color="primary" outline onClick={() => setCol(6)}>
-                        6  Cột
-                    </Button>
+            <Container className='list'>
+                <div>
+                    <h2>Phòng ban</h2>
                 </div>
-                <Row xs="1" md="2" lg={col}>
-                    {STAFFS.map(STAFF => (
-                        <Col className="bg-light border list-text" key={STAFF.id} onClick={() => setStaffId(STAFF.id)}>
-                            {STAFF.name}
-                        </Col>
-                    ))}
+                <Row xs="1" md="2" lg="3">
+                    <Depart />
                 </Row>
             </Container>
-            <InfoStaff staffId={staffId} />
         </Fragment>
     )
 }

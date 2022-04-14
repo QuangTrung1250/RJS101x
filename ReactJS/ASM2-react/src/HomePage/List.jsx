@@ -1,32 +1,33 @@
 import { Container, Row, Col, Button } from 'reactstrap';
-import { STAFFS } from '../Data/staffs'
+import { STAFFS } from '../staffs'
 import InfoStaff from './InfoStaff'
 import React, { useState } from 'react';
 import { Fragment } from 'react/cjs/react.development';
 
 function List() {
     const [staffId, setStaffId] = useState(null);
-    const [col, setCol] = useState(3);
+    function STAFF() {
+        return (
+            STAFFS.map((STAFF) => {
+                return (
+                    <Col className=" list-text" key={STAFF.id} onClick={() => setStaffId(STAFF.id)}>
+                        <div className=' bg-light border list-text-content'>
+                            <div className='image-staff' style={{ backgroundImage: `url(${STAFF.image})` }} ></div>
+                            {STAFF.name}
+                        </div>
+                    </Col>
+                )
+            })
+        )
+    }
     return (
         <Fragment>
-            <Container id='list'>
-                <div className='button-group'>
-                    <Button color="primary" outline onClick={() => setCol(2)}>
-                        2  Cột
-                    </Button>
-                    <Button color="primary" outline onClick={() => setCol(3)}>
-                        3 Cột
-                    </Button>
-                    <Button color="primary" outline onClick={() => setCol(6)}>
-                        6  Cột
-                    </Button>
+            <Container className='list'>
+                <div>
+                    <h2>Danh sách nhân viên</h2>
                 </div>
-                <Row xs="1" md="2" lg={col}>
-                    {STAFFS.map(STAFF => (
-                        <Col className="bg-light border list-text" key={STAFF.id} onClick={() => setStaffId(STAFF.id)}>
-                            {STAFF.name}
-                        </Col>
-                    ))}
+                <Row xs="2" md="3" lg="6">
+                    <STAFF />
                 </Row>
             </Container>
             <InfoStaff staffId={staffId} />
