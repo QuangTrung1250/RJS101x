@@ -34,7 +34,6 @@
 
 .nav-menu:hover {
   color: #0dcaf0;
-  opacity: 0.8;
 }
 
 .list {
@@ -50,7 +49,9 @@
 .list-text:hover {
   color: #0dcaf0;
   cursor: pointer;
-  opacity: 0.8;
+  font-size: 1.2em;
+  font-weight: 500;
+  
 }
 
 .list-text-content {
