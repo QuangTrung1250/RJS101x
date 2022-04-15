@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function List() {
     const [staffId, setStaffId] = useState(null);
-    const [linkStaffId, setLinkStaffId] = useState();
+    const [linkStaffId, setLinkStaffId] = useState('');
 
     return (
         <Fragment>
@@ -17,16 +17,16 @@ function List() {
                 </div>
                 <Row xs="2" md="3" lg="6">
                     {STAFFS.map(STAFF => (
-                        <Col className=" list-text" key={STAFF.id} onClick={() => {
-                            setStaffId(STAFF.id);
-                            setLinkStaffId('/nhan-vien/' + STAFF.name);
-                        }}>
-                            {/* <Link to='{linkStaffId}'> */}
-                            <div className=' bg-light border list-text-content'>
-                                <div className='image-staff' style={{ backgroundImage: `url(${STAFF.image})` }} ></div>
-                                {STAFF.name}
-                            </div>
-                            {/* </Link> */}
+                        <Col className=" list-text"
+                            key={STAFF.id}
+                            onClick={() => { setStaffId(STAFF.id) }}
+                            onMouseOver={() => setLinkStaffId('/nhan-vien/' + STAFF.name)}>
+                            <Link to={linkStaffId}>
+                                <div className=' bg-light border list-text-content'>
+                                    <div className='image-staff' style={{ backgroundImage: `url(${STAFF.image})` }} ></div>
+                                    {STAFF.name}
+                                </div>
+                            </Link>
                         </Col>
                     ))}
                 </Row>
