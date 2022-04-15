@@ -28,7 +28,7 @@
   padding-bottom: 12px;
   background-color: rgb(22, 148, 231);
 }
-.nav-menu {
+.nav-menu  {
   color: antiquewhite;
   text-decoration: none;
   padding-top: 8px;
@@ -38,7 +38,10 @@
   text-transform: uppercase;
   font-weight: 700;
 }
-
+.list-payroll {
+  text-decoration: none;
+  color: #121516;
+}
 .nav-menu:hover {
   color: #0dcaf0;
 }
@@ -130,6 +133,14 @@
 .btn-mail {
   color: white;
   background-color: #FF5500;
+}
+
+.not-found-page {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
 @media (max-width: 767px) {

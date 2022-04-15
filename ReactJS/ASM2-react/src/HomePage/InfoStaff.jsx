@@ -2,27 +2,17 @@ import { Card, CardBody, CardTitle, CardText, Row } from 'reactstrap';
 import { STAFFS } from '../staffs'
 import dateFormat from "dateformat";
 import { Link } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-function InfoStaff({ staffId, linkStaffId }) {
-  console.log(staffId);
-  console.log(linkStaffId)
-  if (staffId == null) {
-    return (
-      <div>
-        <Card>
-          <CardBody className='container'>
-            <CardTitle tag="h5">
-              Bấm vào tên nhân viên để xem thông tin:
-            </CardTitle>
-          </CardBody>
-        </Card>
-      </div>)
-  } else {
+function InfoStaff() {
+  const {staffId} = useParams();
 
     return (
+
       <div className='container list'>
         <h6><i> <Link to="/" className='link-staff'>Nhân viên</Link> /
-          {/* <Link to={linkStaffId} className='link-staff'>{STAFFS[staffId].name} </Link> */}
+          <Link to={`/nhan-vien/${staffId}`} className='link-staff'>{STAFFS[staffId].name} </Link>
           </i></h6>
         <Row>
           <div className='col-xs-12 col-md-4 col-lg-3 '>
@@ -53,7 +43,7 @@ function InfoStaff({ staffId, linkStaffId }) {
         </Row>
       </div>
     )
-  }
+  
 }
 
 export default InfoStaff

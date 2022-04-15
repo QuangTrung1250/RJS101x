@@ -8,6 +8,7 @@ import InfoStaff from './InfoStaff'
 import Footer from './Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faMoneyBill1Wave, faUser } from '@fortawesome/free-solid-svg-icons';
+import NotFound from './NotFound'
 
 function HomePage() {
   return (
@@ -26,7 +27,8 @@ function HomePage() {
         <Route path="/" element={<List />} />
         <Route path="/Department" element={<Department />} />
         <Route path="/Payroll" element={<Payroll />} />
-        <Route path="/nhan-vien/" element={<InfoStaff staffId={0} />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/nhan-vien/:staffId" element={<InfoStaff />} />
       </Routes>
       <Footer />
     </Fragment>
