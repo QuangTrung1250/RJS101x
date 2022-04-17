@@ -1,26 +1,32 @@
 import { Container, Row, Col } from 'reactstrap';
 import { STAFFS } from '../staffs'
-import React, { useState } from 'react';
+import React from 'react';
 import { Fragment } from 'react/cjs/react.development';
 import { Link } from 'react-router-dom';
+import {useState} from 'react';
 
 function List() {
-    const [staffId, setStaffId] = useState('');
+
+ const [newstaffs, setNewStaffs] = useState(STAFFS);
+
     return (
-        <Fragment>
-            <Container className='list'>
-                <div>
-                    <h2>Danh sách nhân viên</h2>
-                </div>
-                <Row xs="2" md="3" lg="6">
-                    {STAFFS.map(STAFF => (
-                        <Col className=" list-text"
-                            key={STAFF.id}
-                            onMouseOver={() => setStaffId(STAFF.id) }
-                            >
-                            <Link to={`nhan-vien/${staffId}`}>
-                                <div className=' bg-light border list-text-content'>
-                                    <div className='image-staff' style={{ backgroundImage: `url(${STAFF.image})` }} ></div>
+     
+        
+<Fragment>
+
+                <Container className='list'>
+                    <div>
+                        <h2>Danh sách nhân viên</h2>
+                    </div>
+                    <Row xs="2" md="3" lg="6">
+                        {newstaffs.map(STAFF => (
+                                <Col className=" list-text"
+                                    key={STAFF.id}                    
+                                    >
+                                    <Link to={`/nhan-vien/${STAFF.id}`}>
+                                        <div className=' bg-light border list-text-content'>
+                                            <div className='image-staff' style={{ backgroundImage: `url(${STAFF.image})` }} ></div>
+                
                                     {STAFF.name}
                                 </div>
                             </Link>
@@ -31,5 +37,6 @@ function List() {
         </Fragment>
     )
 }
+
 export default List
 

@@ -17,7 +17,6 @@
 }
 .icon {
   font-size: 20px;
-
   padding-right: 8px;
 }
 
@@ -74,6 +73,7 @@
 
 .image-staff {
   padding-bottom: 200px;
+  background: no-repeat;
 }
 
 .staffImage {

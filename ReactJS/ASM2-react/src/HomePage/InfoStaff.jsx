@@ -12,7 +12,7 @@ function InfoStaff() {
 
       <div className='container list'>
         <h6><i> <Link to="/" className='link-staff'>Nhân viên</Link> /
-          <Link to={`/nhan-vien/${staffId}`} className='link-staff'>{STAFFS[staffId].name} </Link>
+          <Link to={`/nhan-vien/${staffId}`} className='link-staff'>  {STAFFS[staffId].name} </Link>
           </i></h6>
         <Row>
           <div className='col-xs-12 col-md-4 col-lg-3 '>
