@@ -31,11 +31,10 @@ function Payroll() {
             <Container className='list'>
                 <div>
                     <h2>Bảng lương</h2>
-                    <Dropdown >
+                    <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             Sắp xếp
                         </Dropdown.Toggle>
-
                         <Dropdown.Menu>
                             {tabs.map((tab) => (
                                 <Dropdown.Item key={tab} color="primary" outline

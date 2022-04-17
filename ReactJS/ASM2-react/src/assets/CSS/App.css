@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   background-color: rgb(22, 148, 231);
+  z-index: 9;
 }
 
 .nav-logo {
@@ -26,14 +27,14 @@
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: rgb(22, 148, 231);
+  z-index: 1;
 }
 .nav-menu  {
   color: antiquewhite;
   text-decoration: none;
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-left: 16px;
-  line-height: 40px;
+  line-height: 28px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -73,7 +74,7 @@
 
 .image-staff {
   padding-bottom: 200px;
-  background: no-repeat;
+  background: no-repeat center center;
 }
 
 .staffImage {
@@ -144,15 +145,14 @@
 }
 
 @media (max-width: 767px) {
-  .nav-menu {
-    font-size: 13px;
-    padding-left: 12px;
-  }
+ 
   .icon {
     display: none;
   }
 }
-
+.nav-logo {
+  padding-left: 4px;
+}
 @media (min-width: 768px) and (max-width: 991px) {
 
 }
