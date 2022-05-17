@@ -1,0 +1,172 @@
+.nav-menu-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(22, 148, 231);
+  z-index: 9;
+}
+
+.nav-logo {
+  height: 40px;
+  padding-left: 20px;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.icon {
+  font-size: 20px;
+  padding-right: 8px;
+}
+
+#dropdown-basic {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(22, 148, 231);
+  z-index: 1;
+}
+.nav-menu  {
+  color: antiquewhite;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.list-payroll {
+  text-decoration: none;
+  color: #121516;
+}
+.nav-menu:hover {
+  color: #0dcaf0;
+}
+
+.list {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  min-height: 600px;
+}
+
+.list-text {
+  line-height: 48px;
+}
+
+.list-text:hover {
+  color: #0dcaf0;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 500;
+  
+}
+
+.list-text-content {
+  margin: 8px 4px;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 16px;
+
+}
+.fail-form {
+  color: red !important;
+}
+.success-form {
+  color: green !important;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.image-staff {
+  padding-bottom: 200px;
+  background: no-repeat center center;
+}
+
+.staffImage {
+  width: 100%;
+}
+
+.link-staff:hover {
+  color: #121516;
+  text-decoration: none;
+}
+
+#footer {
+  background-color: rgb(57, 134, 182);
+
+  font-size: 20px;
+}
+
+.footer {
+  padding-top: 32px;
+
+}
+
+.btn-social-icon {
+  font-size: 30px;
+  border-radius: 12px;
+}
+
+.btn-social-icon:hover {
+  opacity: 0.8;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+.btn-google {
+ color: white;
+ background-color: #DD4B39;
+}
+.btn-facebook {
+  color: white;
+  background-color: #3B5998;
+}
+.btn-linkedin {
+  color: white;
+  background-color: #007BB6;
+}
+.btn-twitter {
+  color: white;
+  background-color: #55ACEE;
+}
+
+.btn-youtube {
+  color: white;
+  background-color: #CB2027;
+}
+
+.btn-mail {
+  color: white;
+  background-color: #FF5500;
+}
+
+.not-found-page {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+ 
+  .icon {
+    display: none;
+  }
+}
+.nav-logo {
+  padding-left: 4px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
